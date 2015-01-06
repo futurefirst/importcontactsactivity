@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<extension key="uk.org.futurefirst.networks.importcontactsactivity" type="module">
+  <file>importcontactsactivity</file>
+  <name>Import Contacts Activity</name>
+  <description>Automatically creates activities on bulk imported contacts.</description>
+  <urls>
+    <url desc="Documentation">https://github.com/futurefirst/importcontactsactivity/wiki</url>
+    <url desc="On CiviCRM.org">https://civicrm.org/extensions/import-contacts-activity</url>
+    <url desc="On GitHub">https://github.com/futurefirst/importcontactsactivity</url>
+    <url desc="Future First">http://www.futurefirst.org.uk/</url>
+  </urls>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>David Knoll</author>
+    <email>david@futurefirst.org.uk</email>
+  </maintainer>
+  <releaseDate>2015-01-06</releaseDate>
+  <version>1.0</version>
+  <compatibility>
+    <ver>4.4</ver>
+  </compatibility>
+  <comments>
+    Adds an activity type 'Created by Mass Upload'. An activity of this type
+    will be created for each bulk imported contact, with the source contact as
+    the user running the import, and the target contact as the contact being
+    imported.
+
+    Implementation details:
+    hook_civicrm_install to create the activity type, hook_civicrm_import to
+    create the activities. Exceptions are thrown on error.
+  </comments>
+  <civix>
+    <namespace>CRM/Importcontactsactivity</namespace>
+  </civix>
+</extension>
